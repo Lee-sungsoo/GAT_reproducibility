@@ -40,7 +40,7 @@ class GraphAttentionLayer(nn.Module):
         Wh1 = torch.matmul(Wh, self.a[:self.out_features, :])
         Wh2 = torch.matmul(Wh, self.a[self.out_features:, :])
         e = Wh1 + Wh2.T
-        return self.activation(e)
+        return self.activation(e) # activation function varient
 
 class GAT(nn.Module):
     def __init__(self, nfeat, nhid, nclass, dropout, alpha, nheads, activation):

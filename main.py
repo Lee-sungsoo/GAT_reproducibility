@@ -67,7 +67,7 @@ def train_and_evaluate(graph, features, labels, train_mask, val_mask, test_mask,
         _, test_pred = torch.max(test_logits[test_mask], dim=1)
         test_acc = (test_pred == labels[test_mask]).float().mean().item()
 
-    return model, val_accs, test_acc
+    return model, val_accs
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -120,7 +120,7 @@ if __name__ == "__main__":
         all_val_accs.append(max(val_accs))
         all_test_accs.append(test_acc)
         print(f"Finished processing dataset: {dataset_name}")
-        print(f"Best Test Accuracy: {test_acc}\n")
+        print(f"Best Validation Accuracy: {max(val_accs)}\n")
         print(f"Training time for this trial: {training_time:.2f} seconds\n")
 
     # accuracy plot
@@ -128,16 +128,14 @@ if __name__ == "__main__":
     plt.plot(range(1, len(val_accs)+1), val_accs)
     plt.xlabel("Epoch")
     plt.ylabel("Validation Accuracy")
-    plt.title(f"{dataset_name} - Validation Accuracy")
+    plt.title(f"{dataset_name} - Validation Accuracy({activation})")
     os.makedirs("results", exist_ok=True)  # results 디렉토리 생성
-    plt.savefig(f"results/{dataset_name}_val_acc.png")
+    plt.savefig(f"results/{dataset_name}_val_acc_{activation}.png")
     plt.close()
     plt.show()
 
     avg_val_acc = sum(all_val_accs) / num_trials
-    avg_test_acc = sum(all_test_accs) / num_trials
     avg_training_time = total_training_time / num_trials
     print(f"Finished processing dataset: {dataset_name}")
     print(f"Average Best Validation Accuracy over {num_trials} trials: {avg_val_acc}\n")
-    print(f"Average Test Accuracy over {num_trials} trials: {avg_test_acc}\n")
     print(f"Average Training Time over {num_trials} trials: {avg_training_time:.2f} seconds\n")
