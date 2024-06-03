@@ -49,27 +49,28 @@ The original datasets are directed graphs, but following the methodology in the 
 Using Leaky ReLU:
 - Cora dataset: 29.30 seconds
 - Citeseer dataset: 69.83 seconds
-- Pubmed dataset: 456.41 seconds
+- Pubmed dataset: 4749.72 seconds
 
 Using ELU:
 - Cora dataset: 29.39 seconds
 - Citeseer dataset: 72.80 seconds
-- Pubmed dataset: 450.00 seconds
+- Pubmed dataset: 4800.00 seconds
+
 
 ### Validation Accuracy Plots
 Here are the validation accuracy plots for each dataset and activation function:
 
 #### Cora Dataset
-![Cora Validation Accuracy - Leaky ReLU](results-Cora_val_acc_leaky_relu.png)
-![Cora Validation Accuracy - ELU](results-Cora_val_acc_elu.png)
+![Cora Validation Accuracy - Leaky ReLU](Cora_val_acc_leaky_relu.png)
+![Cora Validation Accuracy - ELU](Cora_val_acc_elu.png)
 
 #### Citeseer Dataset
-![Citeseer Validation Accuracy - Leaky ReLU](results-Citeseer_val_acc_leaky_relu.png)
-![Citeseer Validation Accuracy - ELU](results-Citeseer_val_acc_elu.png)
+![Citeseer Validation Accuracy - Leaky ReLU](Citeseer_val_acc_leaky_relu.png)
+![Citeseer Validation Accuracy - ELU](Citeseer_val_acc_elu.png)
 
 #### Pubmed Dataset
-![Pubmed Validation Accuracy - Leaky ReLU](results-Pubmed_val_acc_leaky_relu.png)
-![Pubmed Validation Accuracy - Leaky ReLU](results-Pubmed_val_acc_elu.png)
+![Pubmed Validation Accuracy - Leaky ReLU](Pubmed_val_acc_leaky_relu.png)
+![Pubmed Validation Accuracy - ELU](Pubmed_val_acc_elu.png)
 
 ### Disscussion
 The impact of changing the activation function on performance was found to be negligible, indicating that the choice of activation function may not be a critical factor in achieving high accuracy for GAT models. ELU was found to require longer training time on average than Leaky ReLU due to the stronger nonlinearity of ELU, which increases the computational demand; however, the performance improvement was not as proportional as expected.
