@@ -61,15 +61,21 @@ Using ELU:
 Here are the validation accuracy plots for each dataset and activation function:
 
 #### Cora Dataset
+- Leaky ReLU
 ![Cora Validation Accuracy - Leaky ReLU](./results/Cora_val_acc_leaky_relu.png)
+- ELU
 ![Cora Validation Accuracy - ELU](./results/Cora_val_acc_elu.png)
 
 #### Citeseer Dataset
+- Leaky ReLU
 ![Citeseer Validation Accuracy - Leaky ReLU](./results/Citeseer_val_acc_leaky_relu.png)
+- ELU
 ![Citeseer Validation Accuracy - ELU](./results/Citeseer_val_acc_elu.png)
 
 #### Pubmed Dataset
+- Leaky ReLU
 ![Pubmed Validation Accuracy - Leaky ReLU](./results/Pubmed_val_acc_leaky_relu.png)
+- ELU
 ![Pubmed Validation Accuracy - ELU](./results/Pubmed_val_acc_elu.png)
 
 ### Disscussion
