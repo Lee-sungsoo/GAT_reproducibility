@@ -15,7 +15,7 @@ The code for the GAT model is based on the pyGAT implementation.
 ### Environment
 - Google Colab TPU v2, 334.6 GB RAM
 ### Hyperparameters
-All hyper-parameters were set by referring to the original paper(GAT).
+To reproduce the performance of the original paper, all hyper-parameters were set with reference to the original paper (GAT).
 - hidden node dimension: 8
 - number of head: 8
 - epochs: 100
