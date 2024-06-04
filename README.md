@@ -61,27 +61,31 @@ Using ELU:
 Here are the validation accuracy plots for each dataset and activation function:
 
 #### Cora Dataset
-- Leaky ReLU
+- Leaky ReLU  
 ![Cora Validation Accuracy - Leaky ReLU](./results/Cora_val_acc_leaky_relu.png)
-- ELU
+- ELU  
 ![Cora Validation Accuracy - ELU](./results/Cora_val_acc_elu.png)
 
 #### Citeseer Dataset
-- Leaky ReLU
+- Leaky ReLU   
 ![Citeseer Validation Accuracy - Leaky ReLU](./results/Citeseer_val_acc_leaky_relu.png)
-- ELU
+- ELU  
 ![Citeseer Validation Accuracy - ELU](./results/Citeseer_val_acc_elu.png)
 
 #### Pubmed Dataset
-- Leaky ReLU
+- Leaky ReLU  
 ![Pubmed Validation Accuracy - Leaky ReLU](./results/Pubmed_val_acc_leaky_relu.png)
-- ELU
+- ELU  
 ![Pubmed Validation Accuracy - ELU](./results/Pubmed_val_acc_elu.png)
 
-### Disscussion
+## Disscussion
 The impact of changing the activation function on performance was found to be negligible, indicating that the choice of activation function may not be a critical factor in achieving high accuracy for GAT models. ELU was found to require longer training time on average than Leaky ReLU due to the stronger nonlinearity of ELU, which increases the computational demand; however, the performance improvement was not as proportional as expected.
 
 In addition, the validation accuracy plots show that using the Leaky ReLU function resulted in more stable training with less fluctuation in accuracy than when using the ELU function. This suggests that Leaky ReLU, with its relatively weaker nonlinearity than ELU, may have provided more consistent training dynamics, contributing to the stability of the training process.
 
-### Conclusion
-The replication study demonstrated a lower level of accuracy compared to the original paper. Despite the investigation of the influence of the activation function, the incorporation of stronger nonlinearities (e.g., ELU) did not result in a significant improvement in performance. These findings highlight the challenge in reproducing GAT results and suggest that there may be other factors (e.g., hyperparameter tuning or experimental conditions) that affect the reported performance.
+## Conclusion
+In this study, we evaluated the reproducibility of GAT models and examined the impact of activation functions on attention scores between neighboring nodes. Our findings revealed a lower level of accuracy compared to the original paper, with the average best validation accuracy for the Cora dataset at 0.66 (Leaky ReLU) and 0.64 (ELU), for the Citeseer dataset at 0.56 for both functions, and for the Pubmed dataset at 0.75 for both functions.
+
+Additionally, ELU required significantly longer training times: 29.39 seconds for Cora, 72.80 seconds for Citeseer, and 4816.39 seconds for Pubmed, compared to 29.30 seconds, 69.83 seconds, and 4749.72 seconds respectively with Leaky ReLU.
+
+These results highlight the challenges of replicating GAT performance and suggest that experimental conditions are crucial. While activation functions affect training stability and duration, they are not the key factor in achieving high accuracy for GAT models.
