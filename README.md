@@ -15,6 +15,7 @@ The code for the GAT model is based on the pyGAT implementation.
 ### Environment
 - Google Colab TPU v2, 334.6 GB RAM
 ### Hyperparameters
+All hyper-parameters were set by referring to the original paper(GAT).
 - hidden node dimension: 8
 - number of head: 8
 - epochs: 100
@@ -24,7 +25,7 @@ The code for the GAT model is based on the pyGAT implementation.
 - $\lambda_{PubmedDataset}$ = 0.001
 - $\lambda_{elseDataset}$ = 0.005  
 
-As with the original paper, the weight attenuation was set to 0.001 for the Pubmed dataset and 0.0005 for the other datasets.
+As with the original paper, the weight decay was set to 0.001 for the Pubmed dataset and 0.0005 for the other datasets.
 
 ### Datasets
 
@@ -89,3 +90,6 @@ In this study, we evaluated the reproducibility of GAT models and examined the i
 Additionally, ELU required significantly longer training times: 29.39 seconds for Cora, 72.80 seconds for Citeseer, and 4816.39 seconds for Pubmed, compared to 29.30 seconds, 69.83 seconds, and 4749.72 seconds respectively with Leaky ReLU.
 
 These results highlight the challenges of replicating GAT performance and suggest that experimental conditions are crucial. While activation functions affect training stability and duration, they are not the key factor in achieving high accuracy for GAT models.
+
+## Reference
+- Velickovic, P., Cucurull, G., Casanova, A., Romero, A., Lio, P., & Bengio, Y. (2017). Graph attention networks.
